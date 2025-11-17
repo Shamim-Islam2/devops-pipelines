@@ -1,4 +1,4 @@
-name : Node.js CI pipeline
+name: Node.js CI/CD pipeline
 
 on:
   push:
@@ -10,15 +10,16 @@ jobs:
 
     steps:
       - name: Checkout Code
-        run: actions/checkout@v5
+        uses: actions/checkout@v5
 
-      - name: Set up Node.js
-        run: actions/setup-node@v4
+      - name: Node.js set up 
+        uses: actions/node-setup@v4
         with:
-          node-version: '20'
+          node-version: 20
 
-      - name: Install Dependencis
+      - name: Install dependencis
         run: npm Install
 
       - name: Run tests
         run: npm test
+
