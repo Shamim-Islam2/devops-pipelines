@@ -10,15 +10,15 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
-      - name: Node.js set up 
+      - name: Set up Node.js 
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
       - name: Install dependencis
-        run: npm Install
+        run: npm install
 
       - name: Run tests
         run: npm test
